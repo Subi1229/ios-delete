@@ -17,14 +17,14 @@ body{background:#0b0b0c;margin:0;font-family:-apple-system,"SF Pro Text",system-
 .sb-bat{position:relative;display:block;width:27px;height:13px;border-radius:4.3px;background:linear-gradient(90deg,#fff 0 80%,rgba(255,255,255,.42) 80% 100%);margin-left:1px}
 .sb-bat b{position:absolute;inset:0;display:grid;place-items:center;font-size:11px;font-weight:700;color:#000;letter-spacing:-.3px;line-height:1;padding-right:2px}
 .sb-bat em{position:absolute;right:-3.2px;top:4.2px;width:1.8px;height:4.6px;border-radius:0 1.2px 1.2px 0;background:rgba(255,255,255,.42)}
-.glass{position:relative;isolation:isolate;background:linear-gradient(180deg,rgba(255,255,255,.13),rgba(255,255,255,.035) 55%,rgba(255,255,255,.06)),rgba(22,22,24,.38);backdrop-filter:blur(18px) saturate(190%) brightness(1.05);-webkit-backdrop-filter:blur(18px) saturate(190%) brightness(1.05);box-shadow:inset 0 1px .5px rgba(255,255,255,.28),inset 0 -1px .5px rgba(255,255,255,.07),inset 0 0 12px rgba(255,255,255,.04)}
+.glass{position:relative;isolation:isolate;background:linear-gradient(180deg,rgba(255,255,255,.13),rgba(255,255,255,.035) 55%,rgba(255,255,255,.06)),rgba(22,22,24,.38);backdrop-filter:blur(18px) saturate(190%) brightness(1.05);-webkit-backdrop-filter:blur(18px) saturate(190%) brightness(1.05);box-shadow:inset 0 1px 1.5px rgba(255,255,255,.17),inset 0 -1px 1.5px rgba(255,255,255,.05),inset 0 0 12px rgba(255,255,255,.04)}
 .glass:not(.frost){background:rgba(52,52,56,.5);backdrop-filter:none;-webkit-backdrop-filter:none}
 .glass>*{position:relative;z-index:1}
 .glass .lclip{position:absolute;inset:0;border-radius:inherit;overflow:hidden;z-index:0;pointer-events:none}
 .glass .lens{position:absolute;pointer-events:none}
 .glass .lens img{position:absolute;display:block;max-width:none;pointer-events:none}
 .glass .ltint{position:absolute;inset:0;border-radius:inherit;z-index:0;pointer-events:none;background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,0) 45%,rgba(0,0,0,.06)),rgba(40,40,44,.18)}
-.glass::before{z-index:2;content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;pointer-events:none;background:linear-gradient(145deg,rgba(255,255,255,.55),rgba(255,255,255,.08) 30%,rgba(255,255,255,0) 50%,rgba(255,255,255,.06) 70%,rgba(255,255,255,.32));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.glass::before{z-index:2;content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;pointer-events:none;background:linear-gradient(145deg,rgba(255,255,255,.34),rgba(255,255,255,.06) 32%,rgba(255,255,255,0) 50%,rgba(255,255,255,.04) 70%,rgba(255,255,255,.2));filter:blur(.4px);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
 
 .top{position:absolute;top:60px;left:17px;right:17px;display:flex;justify-content:space-between;align-items:center;z-index:5}
 .circ{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:#fff;cursor:pointer}
@@ -51,10 +51,10 @@ body{background:#0b0b0c;margin:0;font-family:-apple-system,"SF Pro Text",system-
 .glass svg{filter:none}
 button{all:unset;cursor:pointer}
 button:focus-visible{outline:2px solid #0a84ff;outline-offset:2px}
-#sheet{position:absolute;right:12px;bottom:14px;width:240px;border-radius:42px;padding:28px 15px 15px;z-index:20;transform-origin:88% 100%;transform:scale(.3);opacity:0;pointer-events:none;transition:transform .35s cubic-bezier(.3,1.35,.5,1),opacity .2s}
+#sheet{position:absolute;right:12px;bottom:14px;width:214px;border-radius:40px;padding:30px 13px 13px;z-index:20;transform-origin:88% 100%;transform:scale(.3);opacity:0;pointer-events:none;transition:transform .35s cubic-bezier(.3,1.35,.5,1),opacity .2s}
 #sheet.open{transform:scale(1);opacity:1;pointer-events:auto}
-#sheet p{margin:0 14px 24px;font-size:17px;line-height:1.3;letter-spacing:-.3px;color:#fff}
-#del{display:block;width:100%;box-sizing:border-box;text-align:center;height:48px;line-height:48px;border-radius:24px;background:rgba(255,255,255,.13);color:#ff6961;font-size:17px;font-weight:500;letter-spacing:-.3px}
+#sheet p{margin:0 14px 30px;font-size:17px;line-height:1.36;letter-spacing:-.3px;color:#fff}
+#del{display:block;width:100%;box-sizing:border-box;text-align:center;height:50px;line-height:50px;border-radius:25px;background:rgba(255,255,255,.13);color:#ff6961;font-size:17px;font-weight:500;letter-spacing:-.3px}
 #del:active{background:rgba(255,255,255,.2)}
 #scrim{position:absolute;inset:0;z-index:19;display:none}
 #fx{position:absolute;inset:0;z-index:15;pointer-events:none}
@@ -65,19 +65,20 @@ body.mob .hi{display:none}body.mob #wrap{padding:0}body.mob #phone{border-radius
 .hi{transition:opacity .6s}.hi.off{opacity:0}
 #sheet.glass{background:rgba(30,30,32,.5)}#sheet .ltint{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,0) 40%),rgba(20,20,22,.25)}
 #sheet p,#sheet #del{position:relative;z-index:1}
-#strip,.bar>*{transition:filter .3s,opacity .3s}#phone.sheeton #strip,#phone.sheeton .bar>*{filter:blur(7px);opacity:.55}
+#strip,.bar>*{transition:filter .3s,opacity .3s}#phone.sheeton #strip,#phone.sheeton .bar>*,#phone.sheeton #vbar{filter:blur(7px);opacity:.55}
 .island{position:absolute;top:11px;left:50%;width:125px;height:37px;margin-left:-62.5px;border-radius:20px;background:#000;z-index:40;pointer-events:none}body.mob .island{display:none}
 .sb-time{top:19px!important;left:30px!important;width:84px!important}.sb-right{top:23px!important;right:28px!important}
 #vid,.nbv{position:absolute;transition:none!important;left:50%;top:50%;translate:-50% -50%;max-width:100%;max-height:100%;pointer-events:none}
 #verr{position:absolute;left:24px;right:24px;top:45%;text-align:center;color:#ff8a80;font-size:14px;line-height:1.4;z-index:3}
 #strip div video{width:100%;height:100%;object-fit:cover;border-radius:inherit;pointer-events:none;display:block}
-#vbar{position:absolute;left:14px;right:14px;bottom:144px;height:48px;border-radius:24px;display:flex;align-items:center;gap:14px;padding:0 16px 0 18px;z-index:5;transition:opacity .3s}
+#vbar{position:absolute;left:14px;right:14px;bottom:144px;height:40px;border-radius:20px;display:flex;align-items:center;gap:12px;padding:0 11px 0 13px;z-index:5;transition:opacity .3s}
 #vbar:not(.on),#phone.full #vbar,#phone.busy #vbar{opacity:0;pointer-events:none}
 #vbar button{display:grid;place-items:center;width:28px;height:28px;flex:none}
 #vtrack{flex:1;height:6px;border-radius:3px;background:rgba(255,255,255,.28);position:relative;cursor:pointer;touch-action:none}
 #vtrack::before{content:'';position:absolute;inset:-14px 0}
 #vfill{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:3px;background:#fff}
 #vpp .i-play,#vpp.paused .i-pause,#vmute .i-sound,#vmute.unmuted .i-muted{display:none}#vpp.paused .i-play,#vmute.unmuted .i-sound{display:block}
+#vbar .ltint{background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,0) 45%),rgba(14,14,16,.42)}
 </style>
 <div id="wrap"><div id="box"><div id="phone">
  <div class="status"><span class="sb-time">8:01</span><span class="sb-right"><svg width="19" height="5" viewBox="0 0 19 5"><g fill="rgba(255,255,255,.38)"><circle cx="2.2" cy="2.5" r="2"/><circle cx="7.1" cy="2.5" r="2"/><circle cx="12" cy="2.5" r="2"/><circle cx="16.9" cy="2.5" r="2"/></g></svg><svg width="17" height="12" viewBox="0 0 17 12"><path fill="#fff" d="M8.5 11.6 6.2 9.3a3.3 3.3 0 0 1 4.6 0ZM3.6 6.7a6.9 6.9 0 0 1 9.8 0l-1.3 1.4a5 5 0 0 0-7.2 0ZM1 4.1a10.6 10.6 0 0 1 15 0L14.7 5.5a8.7 8.7 0 0 0-12.4 0Z"/></svg><span class="sb-bat"><b>80</b><em></em></span></span></div>
@@ -88,7 +89,7 @@ body.mob .hi{display:none}body.mob #wrap{padding:0}body.mob #phone{border-radius
  </div>
  <div id="stage"><img id="pv" class="nb" alt="" draggable="false"><img id="photo" alt="Photo" draggable="false"><video id="vid" playsinline muted loop hidden></video><video id="pvv" class="nbv" playsinline muted preload="auto" hidden></video><video id="nxv" class="nbv" playsinline muted preload="auto" hidden></video><div id="verr" hidden></div><img id="nx" class="nb" alt="" draggable="false"></div>
  <div id="empty"><div>No Photos<br><button id="reset">Restore all</button></div></div>
- <div id="strip"></div><div id="vbar" class="glass"><button id="vpp" aria-label="Pause"><svg class="i-pause" width="16" height="20" viewBox="0 0 16 20"><rect x="1" y="1" width="4.6" height="18" rx="1.4" fill="#fff"/><rect x="10.4" y="1" width="4.6" height="18" rx="1.4" fill="#fff"/></svg><svg class="i-play" width="17" height="20" viewBox="0 0 17 20"><path d="M2 2.2v15.6c0 .9 1 1.4 1.7.9l12-7.8c.7-.4.7-1.4 0-1.8l-12-7.8C3 .8 2 1.3 2 2.2Z" fill="#fff"/></svg></button><div id="vtrack"><div id="vfill"></div></div><button id="vmute" aria-label="Unmute"><svg class="i-muted" width="24" height="22" viewBox="0 0 24 22" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"><path d="M3 8h3.5L12 3.5v15L6.5 14H3Z" fill="#fff" stroke="none"/><path d="M15.5 8.5l5 5M20.5 8.5l-5 5"/><path d="M2 2l19 18" stroke-width="2"/></svg><svg class="i-sound" width="24" height="22" viewBox="0 0 24 22" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"><path d="M3 8h3.5L12 3.5v15L6.5 14H3Z" fill="#fff" stroke="none"/><path d="M15.5 7.5a5 5 0 0 1 0 7M18.5 4.5a9 9 0 0 1 0 13"/></svg></button></div>
+ <div id="strip"></div><div id="vbar" class="glass"><button id="vpp" aria-label="Pause"><svg class="i-pause" width="16" height="20" viewBox="0 0 16 20"><rect x="1" y="1" width="4.6" height="18" rx="1.4" fill="#fff"/><rect x="10.4" y="1" width="4.6" height="18" rx="1.4" fill="#fff"/></svg><svg class="i-play" width="17" height="20" viewBox="0 0 17 20"><path d="M2 2.2v15.6c0 .9 1 1.4 1.7.9l12-7.8c.7-.4.7-1.4 0-1.8l-12-7.8C3 .8 2 1.3 2 2.2Z" fill="#fff"/></svg></button><div id="vtrack"><div id="vfill"></div></div><button id="vmute" aria-label="Unmute"><svg class="i-muted" width="24" height="22" viewBox="0 0 24 22"><defs><mask id="mcut"><rect width="24" height="22" fill="#fff"/><path d="M5 2.5 20.5 19.5" stroke="#000" stroke-width="4.6" stroke-linecap="round"/></mask></defs><path d="M3.5 7.2h3.6l6-5v17.6l-6-5H3.5c-.8 0-1.5-.7-1.5-1.5V8.7c0-.8.7-1.5 1.5-1.5Z" fill="#fff" mask="url(#mcut)"/><path d="M5 2.5 20.5 19.5" stroke="#fff" stroke-width="1.9" stroke-linecap="round"/></svg><svg class="i-sound" width="24" height="22" viewBox="0 0 24 22" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"><path d="M3 8h3.5L12 3.5v15L6.5 14H3Z" fill="#fff" stroke="none"/><path d="M15.5 7.5a5 5 0 0 1 0 7M18.5 4.5a9 9 0 0 1 0 13"/></svg></button></div>
  <div class="bar">
   <div class="circ glass"><svg width="17" height="22" viewBox="0 0 17 22" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"><path d="M8.5 13.5V1.6M4.6 5.2 8.5 1.4l3.9 3.8M5.4 8.4H3.6A2.4 2.4 0 0 0 1.2 10.8v7.6a2.4 2.4 0 0 0 2.4 2.4h9.8a2.4 2.4 0 0 0 2.4-2.4v-7.6a2.4 2.4 0 0 0-2.4-2.4h-1.8"/></svg></div>
   <div class="pill glass">
@@ -178,7 +179,7 @@ render();
  document.querySelectorAll('.glass:not(.frost)').forEach(el=>{const w=el.offsetWidth,h=el.offsetHeight,r=Math.min(Math.min(h,w)/2,parseFloat(getComputedStyle(el).borderTopLeftRadius)||1e9),B=el.id==='sheet'?16:Math.max(12,Math.min(26,h*.5)),id='lg'+(n++);
   const f=document.createElementNS(NS,'filter');f.setAttribute('id',id);f.setAttribute('x',0);f.setAttribute('y',0);f.setAttribute('width',w+2*B);f.setAttribute('height',h+2*B);
   f.setAttribute('filterUnits','userSpaceOnUse');f.setAttribute('primitiveUnits','userSpaceOnUse');f.setAttribute('color-interpolation-filters','sRGB');
-  f.innerHTML='<feImage href="'+dmap(w,h,r,B)+'" x="0" y="0" width="'+(w+2*B)+'" height="'+(h+2*B)+'" result="m" preserveAspectRatio="none"/><feGaussianBlur in="SourceGraphic" stdDeviation="'+(el.id==='sheet'?12:0.6)+'" result="b"/><feDisplacementMap in="b" in2="m" scale="'+(2*B)+'" xChannelSelector="R" yChannelSelector="G"/>';
+  f.innerHTML='<feImage href="'+dmap(w,h,r,B)+'" x="0" y="0" width="'+(w+2*B)+'" height="'+(h+2*B)+'" result="m" preserveAspectRatio="none"/><feGaussianBlur in="SourceGraphic" stdDeviation="'+(el.id==='sheet'?12:el.id==='vbar'?5:0.6)+'" result="b"/><feDisplacementMap in="b" in2="m" scale="'+(2*B)+'" xChannelSelector="R" yChannelSelector="G"/>';
   defs.appendChild(f);const clip=document.createElement('div');clip.className='lclip';const lens=document.createElement('div');lens.className='lens';lens.style.cssText='left:'+(-B)+'px;top:'+(-B)+'px;width:'+(w+2*B)+'px;height:'+(h+2*B)+'px;filter:url(#'+id+')';
   const imgs=srcs.map(()=>{const i=document.createElement('img');i.alt='';lens.appendChild(i);return i});clip.appendChild(lens);const tint=document.createElement('div');tint.className='ltint';
   el.prepend(tint);el.prepend(clip);L.push({el,lens,imgs,B})});
