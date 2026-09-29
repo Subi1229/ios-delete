@@ -365,4 +365,14 @@ function finish(){if(!group){render();busy=false;phone.classList.remove('busy');
   [['--ct',y],['--cr',sh.offsetWidth-x-w],['--cb',sh.offsetHeight-y-h],['--cl',x],['--crd',h/2]].forEach(a=>sh.style.setProperty(a[0],a[1]+'px'));sh.style.setProperty('--co',(x+w/2)+'px '+(y+h/2)+'px')}
  fit();addEventListener('resize',fit);addEventListener('load',fit);document.getElementById('trash').addEventListener('pointerdown',fit,true)})();
 
+
+(function(){const vs=['vid','pvv','nxv'].map(id=>document.getElementById(id));
+ function region(){const pr=phone.getBoundingClientRect(),sc=pr.width/PW,c=document.querySelector('.top .circ'),th=strip.firstElementChild;if(!c)return null;
+  const cr=c.getBoundingClientRect(),top=(cr.top+cr.height/2-pr.top)/sc;let bot=PH-150;if(th){const tr=th.getBoundingClientRect();if(tr.height)bot=(tr.bottom-pr.top)/sc+8}
+  return{top,bot,sc,pr}}
+ function fitV(v){if(!v.videoWidth)return;const R=region();if(!R)return;const st=v.offsetParent||phone,sr=st.getBoundingClientRect(),sW=sr.width/R.sc,sH=sr.height/R.sc,
+   natH=Math.min(sH,sW*v.videoHeight/v.videoWidth),rh=R.bot-R.top;
+  if(natH>rh+2){const cy=(R.top+R.bot)/2-(sr.top-R.pr.top)/R.sc;v.style.top=cy+'px';v.style.maxHeight=rh+'px'}else{v.style.top='';v.style.maxHeight=''}}
+ vs.forEach(v=>{['loadedmetadata','loadeddata','resize'].forEach(e=>v.addEventListener(e,()=>fitV(v)))});
+ const all=()=>vs.forEach(fitV);addEventListener('resize',()=>setTimeout(all,60));setInterval(all,700)})();
 </script>
